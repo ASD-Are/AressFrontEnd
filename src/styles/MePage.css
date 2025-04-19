@@ -1,0 +1,37 @@
+.me-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #1a002a, #2d003d);
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .me-card {
+    background-color: #300040;
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+  }
+  
+  .logout-btn {
+    margin-top: 20px;
+    background-color: #8e24aa;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .logout-btn:hover {
+    background-color: #a334be;
+  }
+  
+  .loading-text {
+    color: white;
+    font-size: 20px;
+  }

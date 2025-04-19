@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #240039;
+  }
+  
+  /* MAIN CONTAINER with gradient */
+  .login-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to right, #14001f 0%, #1c002b 45%, #160020 55%, #15001e 100%);
+    /* soft fade between sides */
+  }
+  
+  .left-side,
+  .right-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Remove solid background colors from sides now handled by gradient */
+  .left-side .logo {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+  
+  .brand-name {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+  }
+  
+  /* Right content (form) styling remains same */
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 400px;
+  }
+  
+  .form-title {
+    color: #ff69b4;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Inputs */
+  .styled-input {
+    padding: 16px 20px;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .styled-input:focus {
+    background-color: rgba(255, 255, 255, 0.05);
+    outline: none;
+  }
+  
+  /* Buttons */
+  .button-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  
+  .btn {
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .primary-btn {
+    background-color: #8e24aa;
+    color: white;
+    border: none;
+  }
+  
+  .secondary-btn {
+    background-color: transparent;
+    border: 2px solid #ff69b4;
+    color: #ff69b4;
+  }
+  
+  .or-separator {
+    font-weight: bold;
+    color: white;
+    padding: 0 6px;
+    align-self: center;
+  }
+  
+  /* Links */
+  .bottom-links {
+    text-align: center;
+  }
+  
+  .forgot-password {
+    color: white;
+    font-size: 16px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
