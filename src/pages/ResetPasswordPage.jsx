@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import '../styles/LoginPage.css';
 import { useNavigate } from 'react-router-dom';
+import axios from '../utils/axiosInstance'; 
 
 const ResetPasswordPage = () => {
   const navigate = useNavigate();

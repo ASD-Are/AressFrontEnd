@@ -1,8 +1,7 @@
-// src/pages/ForgotPasswordPage.jsx
 import React, { useState } from 'react';
-import axios from 'axios';
-import '../styles/LoginPage.css'; // Reuse existing styles
+import '../styles/LoginPage.css'; 
 import { useNavigate } from 'react-router-dom';
+import axios from '../utils/axiosInstance'; 
 
 const ForgotPasswordPage = () => {
   const [email, setEmail] = useState('');

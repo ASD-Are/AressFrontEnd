@@ -1,0 +1,30 @@
+.delete-container {
+    background-color: #14001f;
+    color: white;
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .warning-text {
+    color: #ff4d4d;
+    margin: 20px 0;
+    font-size: 18px;
+    max-width: 500px;
+    margin-inline: auto;
+  }
+  
+  .delete-btn {
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .delete-btn:hover {
+    background-color: #e60000;
+  }

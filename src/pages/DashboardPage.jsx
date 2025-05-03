@@ -1,20 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import DashboardLayout from '../components/DashboardLayout';
+import TabNavigation from '../components/TabNavigation';
 import '../styles/Dashboard.css';
-import logo from '../assets/logo.png';
+import { useNavigate } from 'react-router-dom';
 
-const Dashboard = () => {
+const DashboardPage = () => {
   const [activeTab, setActiveTab] = useState('scan');
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [showIntro, setShowIntro] = useState(true);
+  const navigate = useNavigate();
+
+
+  useEffect(() => {
+    if (activeTab !== 'scan') {
+      setShowIntro(false); 
+    }
+  }, [activeTab]);
 
   const renderContent = () => {
     switch (activeTab) {
       case 'scan':
         return (
           <div className="action-group">
-            <button>Start New Scan</button>
-            <button>List All Scans</button>
-            <button>Get Scan by ID</button>
-            <button>Delete Scan</button>
+            <button onClick={() => navigate('/scan/start')}>Start New Scan</button>
+            <button onClick={() => navigate('/scan/list')}>List All Scans</button>
+            <button onClick={() => navigate('/scan/get')}>Get Scan by ID</button>
+            <button onClick={() => navigate('/scan/delete')}>Delete Scan</button>
           </div>
         );
       case 'export':
@@ -38,63 +48,19 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="dashboard-container">
-      {/* Hamburger + Sidebar */}
-      <div className={`sidebar ${menuOpen ? 'open' : ''}`}>
-        <div className="sidebar-menu">
-          <button className="menu-link">👤 My Profile</button>
-          <button className="menu-link">✏️ Update Info</button>
-          <button className="menu-link">🔒 Change Password</button>
-          <button className="menu-link">🗑 Delete Account</button>
-          <button className="menu-link">📕 Log Out</button>
-        </div>
-      </div>
-
-      {/* Top bar */}
-      <div className="top-bar">
-        <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen ? '|||' : '≡'}
-        </button>
-        <img src={logo} alt="ARESS Logo" className="dashboard-logo" />
-      </div>
-
-      {/* Main Section */}
+    <DashboardLayout>
       <div className="main">
-        <h1 className="dashboard-title">ARESS Security Toolkit</h1>
-        <p className="dashboard-subtext">
-          Run scans, export reports, and search data securely.
-        </p>
-
-        {/* Tabs */}
-        <div className="tab-selector">
-          <button
-            className={activeTab === 'scan' ? 'active-tab' : ''}
-            onClick={() => setActiveTab('scan')}
-          >
-            🛡 Scan Management
-          </button>
-          <button
-            className={activeTab === 'export' ? 'active-tab' : ''}
-            onClick={() => setActiveTab('export')}
-          >
-            📄 Export Reports
-          </button>
-          <button
-            className={activeTab === 'tools' ? 'active-tab' : ''}
-            onClick={() => setActiveTab('tools')}
-          >
-            🧠 Tools & Search
-          </button>
-        </div>
-
-        <div className="tab-rail" />
-        <div className={`tab-underline ${activeTab}`} />
-
-        {/* Actions */}
+        {showIntro && (
+          <>
+            <h1 className="dashboard-title">ARESS Security Toolkit</h1>
+            <p className="dashboard-subtext">Run scans, export reports, and search data securely.</p>
+          </>
+        )}
+        <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
         {renderContent()}
       </div>
-    </div>
+    </DashboardLayout>
   );
 };
 
-export default Dashboard;
+export default DashboardPage;

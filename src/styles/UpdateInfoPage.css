@@ -1,0 +1,64 @@
+.update-container {
+    background-color: #14001f;
+    color: white;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .terminal-card {
+    background-color: #1c002b;
+    padding: 32px 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(255, 105, 180, 0.3);
+    width: 480px;
+  }
+  
+  .field-group {
+    margin-bottom: 24px;
+  }
+  
+  label {
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 6px;
+    color: #bbb;
+  }
+  
+  .terminal-text {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    background-color: #2a003d;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .terminal-text:hover {
+    background-color: #2f0044;
+  }
+  
+  .terminal-input {
+    width: 100%;
+    font-size: 18px;
+    padding: 12px;
+    border: 2px solid #ff69b4;
+    background-color: #1e002a;
+    color: white;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+  }
+  
+  .save-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 2px solid #ff69b4;
+    background-color: transparent;
+    color: #ff69b4;
+    cursor: pointer;
+  }

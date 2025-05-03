@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/LoginPage.css';
 
@@ -72,7 +72,7 @@ const LoginForm = () => {
       </div>
 
       <div className="bottom-links">
-        <a href="/forgot-password" className="forgot-password">Forgot Password</a>
+      <Link to="/forgot-password" className="forgot-password">Forgot Password</Link>
       </div>
     </form>
   );

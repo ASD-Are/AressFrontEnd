@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../styles/MePage.css';
+import axios from '../utils/axiosInstance'; 
 
 const MePage = () => {
   const [user, setUser] = useState(null);
@@ -40,7 +40,7 @@ const MePage = () => {
     localStorage.removeItem('access_token');
     navigate('/');
   };
-  
+
   return (
     <div className="me-container">
       {user ? (
