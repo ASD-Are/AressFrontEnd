@@ -1,0 +1,43 @@
+/* ExportPages.css */
+
+/* Export Button Styles - Same action-group logic */
+.export-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 32px;
+  }
+  
+  .export-buttons button {
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  
+  /* 🌙 DARK MODE */
+  body.dark-mode .export-buttons button {
+    background-color: #281c3c;
+    color: #fff;
+    border: 1px solid #483366;
+  }
+  
+  body.dark-mode .export-buttons button:hover {
+    background-color: #3c2952;
+    color: #ff69b4;
+  }
+  
+  /* ☀️ LIGHT MODE */
+  body.light-mode .export-buttons button {
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #ccc;
+  }
+  
+  body.light-mode .export-buttons button:hover {
+    background-color: #f0f0f0;
+    color: #7b2cbf;
+  }

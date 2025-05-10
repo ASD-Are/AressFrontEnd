@@ -30,7 +30,7 @@ const LoginForm = () => {
       console.log('Token:', response.data.access_token);
 
       // ✅ Redirect to dashboard or home
-      navigate('/dashboard');
+      navigate('/first-dashboard');
     } catch (err) {
       console.error('Login error:', err.response?.data || err.message);
       alert('❌ Login failed: ' + (err.response?.data?.detail || 'Unknown error'));
@@ -44,7 +44,9 @@ const LoginForm = () => {
   return (
     <form onSubmit={handleLogin} className="login-form">
       <h1 className="form-title">LOG IN</h1>
-
+      <p className="form-subtext">
+        Authenticate to access your scans, reports, and threat dashboard.
+      </p>
       <input
         type="email"
         placeholder="Email"

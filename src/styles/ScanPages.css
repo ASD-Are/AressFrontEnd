@@ -1,11 +1,24 @@
 .scan-form-container {
-    background: #1c002b;
+    background: #3AAFA9;
     padding: 30px;
     border-radius: 16px;
     color: #eee;
-    max-width: 700px;
-    margin: 30px auto;
+    /* max-width: 700px;
+    margin: 30px auto; */
+    width: 100%;          /* ✅ take full width */
+  margin: 20px 0;       /* ✅ remove side margin */
     box-shadow: 0 0 12px rgba(255, 105, 180, 0.1);
+  }
+  /* 🌙 DARK MODE */
+body.dark-mode .scan-form-container {
+  background-color: #15002b;
+  color: #eee;
+  box-shadow: 0 0 12px rgba(255, 105, 180, 0.1);
+}
+
+  body.light-mode .scan-form-container {
+    background-color: #f5efff;
+    color: #222;
   }
   
   .scan-form h2 {
@@ -167,3 +180,200 @@
   .danger-button:hover {
     background-color: #e60000;
   }
+
+  /* Input & Form */
+body.dark-mode .scan-form input,
+body.dark-mode .scan-form select {
+  background-color: #1a1a1a;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+body.light-mode .scan-form input,
+body.light-mode .scan-form select {
+  background-color: #fff;
+  color: #111;
+  border: 1px solid #ccc;
+}
+
+/* Buttons */
+body.dark-mode .scan-form button,
+body.dark-mode .action-group button {
+  background-color: #7b2cbf;
+  color: #fff;
+  border: none;
+}
+
+body.light-mode .scan-form button,
+body.light-mode .action-group button {
+  background-color: #ececec;
+  color: #111;
+  border: 1px solid #ccc;
+}
+
+body.light-mode .scan-form button:hover {
+  background-color: #ddd;
+}
+
+body.dark-mode .scan-form button:hover {
+  background-color: #9f42e2;
+}
+
+/* JSON Preview */
+body.dark-mode .json-output {
+  background-color: #121212;
+  color: #eee;
+  border: 1px solid #333;
+}
+
+body.light-mode .json-output {
+  background-color: #f5f5f5;
+  color: #222;
+  border: 1px solid #ccc;
+}
+
+/* Error & Success Messages */
+.error-message {
+  color: #d32f2f;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.scan-results-preview {
+  background-color: rgba(123, 44, 191, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+body.dark-mode .terminal-output {
+  background-color: #000;
+  color: #00ff99;
+}
+
+body.light-mode .terminal-output {
+  background-color: #f1f1f1;
+  color: #444;
+}
+
+.scan-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.scan-form input,
+.scan-form select,
+.scan-form button {
+  width: 100%;          /* ✅ fill entire form row */
+  max-width: 70%;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+/* GROUP WRAPPER */
+.action-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: 24px 0;
+}
+
+/* DEFAULT BUTTON STYLE */
+.action-group button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* 🌙 DARK MODE */
+body.dark-mode .action-group button {
+  background-color: #281c3c;
+  color: #fff;
+  border: 1px solid #483366;
+}
+
+body.dark-mode .action-group button:hover {
+  background-color: #3c2952;
+  color: #ff69b4;
+}
+
+/* ☀️ LIGHT MODE */
+body.light-mode .action-group button {
+  background-color: #ffffff;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+body.light-mode .action-group button:hover {
+  background-color: #f0f0f0;
+  color: #7b2cbf;
+}
+
+/* 🌙 DARK MODE */
+body.dark-mode .scan-results-preview {
+  background-color: rgba(123, 44, 191, 0.1);
+  color: #eee;
+  border: 1px solid #3f275c;
+}
+h4 {
+ color: #0f5338;
+}
+
+/* ☀️ LIGHT MODE */
+body.light-mode .scan-results-preview {
+  background-color: #f9f6ff;
+  color: #222;
+  border: 1px solid #dcd1f3;
+}
+
+.scan-results-preview {
+  max-width: 720px;
+  margin: 24px auto;
+  padding: 24px;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.download-link {
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: bold;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: transparent;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.download-link:hover {
+  border-color: #ff69b4;
+  color: #ff69b4;
+  background-color: rgba(255, 105, 180, 0.05);
+}
+.tool-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 12px;
+  margin-bottom: 16px;
+}
+
+.tool-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #ddd;
+}

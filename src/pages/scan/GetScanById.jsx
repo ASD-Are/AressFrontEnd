@@ -26,7 +26,7 @@ const GetScanById = () => {
     setResult(null);
 
     try {
-      const res = await axios.get(`/scan/scan/${scanId}`);
+      const res = await axios.get(`/scan/scan/scan/${scanId}`);
       setResult(res.data);
     } catch (err) {
       setError('❌ Invalid ID or scan not found.');
@@ -82,16 +82,16 @@ const GetScanById = () => {
       case 'export':
         return (
           <div className="action-group">
-            <button>Download JSON</button>
-            <button>Download PDF</button>
-            <button>Download AI Report</button>
+            <button onClick={() => navigate('/export/json')}>🧾 Export Reports</button>
+            <button onClick={() => navigate('/export/pdf')}>Download PDF</button>
+            <button onClick={() => navigate('/export/ai')}>Download AI Report</button>
           </div>
         );
       case 'tools':
         return (
           <div className="action-group">
-            <button>View Available Tools</button>
-            <button>Search Scan Data</button>
+            <button onClick={() => navigate('/scan/latest')}>Show Latest Scan</button>
+            <button onClick={() => navigate('/export/search-keyword')}>Search Scan Data</button>
           </div>
         );
       default:

@@ -1,30 +1,215 @@
-.delete-container {
-    background-color: #14001f;
-    color: white;
-    padding: 50px;
-    text-align: center;
-  }
-  
-  .warning-text {
-    color: #ff4d4d;
-    margin: 20px 0;
-    font-size: 18px;
-    max-width: 500px;
-    margin-inline: auto;
-  }
-  
-  .delete-btn {
-    padding: 14px 28px;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    background-color: #ff4d4d;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .delete-btn:hover {
-    background-color: #e60000;
-  }
+/* DashboardStats.css */
+
+.dashboard-stats-container {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dashboard-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+body.light-mode .dashboard-header-bar {
+  background: #f8f9fe;
+  color: #333;
+}
+
+body.dark-mode .dashboard-header-bar {
+  background: #2b2b3d;
+  color: #eee;
+  border: 1px solid #444;
+}
+
+.stats-cards {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.card {
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+body.light-mode .card {
+  background-color: white;
+  color: #333;
+}
+
+body.dark-mode .card {
+  background-color: #1c1c2a;
+  color: #eee;
+  border: 1px solid #333;
+}
+
+.card h3 {
+  font-size: 14px;
+  color: inherit;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 28px;
+  font-weight: bold;
+  color: inherit;
+}
+
+.dashboard-graphs {
+  display: flex;
+  gap: 24px;
+}
+
+.graph-placeholder,
+.recent-scans {
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+body.light-mode .graph-placeholder,
+body.light-mode .recent-scans,
+body.light-mode .donut-chart-placeholder,
+body.light-mode .risk-bars {
+  background: white;
+  color: #333;
+}
+
+body.dark-mode .graph-placeholder,
+body.dark-mode .recent-scans,
+body.dark-mode .donut-chart-placeholder,
+body.dark-mode .risk-bars {
+  background: #1c1c2a;
+  color: #eee;
+  border: 1px solid #333;
+}
+
+.fake-graph {
+  height: 160px;
+  background: linear-gradient(to right, #ddd 25%, #eee 25%, #eee 50%, #ddd 50%, #ddd 75%, #eee 75%);
+  background-size: 100% 100%;
+  border-radius: 6px;
+}
+
+.recent-scans table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.recent-scans th,
+.recent-scans td {
+  text-align: left;
+  padding: 8px;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.recent-scans .view-all {
+  float: right;
+  font-size: 14px;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.risk-distribution-section {
+  display: flex;
+  gap: 24px;
+}
+
+.donut-chart-placeholder,
+.risk-bars {
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.donut-fake {
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  background: conic-gradient(#4e73df 0% 60%, #36b9cc 60% 85%, #f6c23e 85% 100%);
+  margin: auto;
+}
+
+.donut-labels {
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.legend-color {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.legend-color.high {
+  background-color: #dc3545;
+}
+
+.legend-color.medium {
+  background-color: #ffc107;
+}
+
+.legend-color.low {
+  background-color: #28a745;
+}
+
+.risk-bars p {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.bar {
+  height: 8px;
+  margin-left: 10px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.bar.high {
+  background-color: #dc3545;
+}
+
+.bar.medium {
+  background-color: #ffc107;
+}
+
+.bar.low {
+  background-color: #28a745;
+}
+
+.styled-avatar {
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 20px;
+}
+
+body.light-mode .styled-avatar {
+  color: #333;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+body.dark-mode .styled-avatar {
+  color: #fff;
+  background: #2d2d3d;
+  box-shadow: 0 1px 3px rgba(255, 255, 255, 0.05);
+}

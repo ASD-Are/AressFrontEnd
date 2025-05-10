@@ -1,0 +1,46 @@
+.account-settings-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .page-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #7b2cbf;
+  }
+  
+  .account-section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .account-section input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .account-section button {
+    padding: 10px 20px;
+    background-color: #7b2cbf;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .danger-btn {
+    background-color: #b00020;
+  }
+  
+  .feedback-msg {
+    margin-bottom: -20px;
+    padding: 10px;
+    color: #007e33;
+  }

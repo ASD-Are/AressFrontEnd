@@ -9,7 +9,6 @@ const DashboardPage = () => {
   const [showIntro, setShowIntro] = useState(true);
   const navigate = useNavigate();
 
-
   useEffect(() => {
     if (activeTab !== 'scan') {
       setShowIntro(false); 
@@ -30,16 +29,17 @@ const DashboardPage = () => {
       case 'export':
         return (
           <div className="action-group">
-            <button>Download JSON</button>
-            <button>Download PDF</button>
-            <button>Download AI Report</button>
+            <button onClick={() => navigate('/export/json')}>🧾 Export Reports</button>
+      
+            <button onClick={() => navigate('/export/pdf')}>Download PDF</button>
+            <button onClick={() => navigate('/export/ai')}>Download AI Report</button>
           </div>
         );
       case 'tools':
         return (
           <div className="action-group">
-            <button>View Available Tools</button>
-            <button>Search Scan Data</button>
+            <button onClick={() => navigate('/scan/latest')}>Show Latest Scan</button>
+            <button onClick={() => navigate('/export/search-keyword')}>Search Scan Data</button>
           </div>
         );
       default:
@@ -59,6 +59,7 @@ const DashboardPage = () => {
         <TabNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
         {renderContent()}
       </div>
+      
     </DashboardLayout>
   );
 };
